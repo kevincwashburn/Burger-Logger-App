@@ -1,28 +1,32 @@
-{{!-- burger image here --}}
-<h1> Eat-The-Burger</h1>
 
-
-
-<form id="add-burger" class="button-size">
-    <input type="text" id="burger"></input>
-    <button type="btn-submit">Submit</button>
-</form>
+<div class="row">
+    <div class ="col-lg-4 heading">
+        <img src = "/assets/img/burger.jpg" class="burger-img">
+        <h1> Eat-The-Burger</h1>
+    </div>
+</div>
 
 
 <div id="burger-list">
-    <ul>
+    <ul class="undevoured">
         {{#each boigahs}}
         {{#unless devoured}}
         <li>
             <p>
-                {{name}}
+                {{id}}. {{name}}
+                <button data-burger-id="{{id}}" class="btn-devour">Devour it</button>
             </p>
-            <button data-burger-id="{{id}}" class="btn-devour">Devour it</button>
+            
         </li>
         {{/unless}}
         {{/each}}
     </ul>
 </div>
+
+<form id="add-burger" class="button-size">
+    <input type="text" id="burger"></input>
+    <button type="btn-submit">Submit</button>
+</form>
 
 <div class="devoured-list">
     <ul>

@@ -8,6 +8,7 @@ var PORT = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -55,9 +56,8 @@ app.get("/", function (req, res) {
 app.put("/api/burgers/:id", function (req, res) {
   connection.query("UPDATE burgers SET devoured = true WHERE id = ?", 
   [req.params.id], 
-
   function (err, result) {
-    console.log(req.params.id);
+    
     if (err) throw err;
     else if (result.changedRows === 0) {
       return res.status(404).end();

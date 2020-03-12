@@ -1,0 +1,13 @@
+body {
+    background:#F08700;
+};
+
+.burger-img {
+    margin: 0 auto;
+    height: 400;
+    width: 400;
+};
+
+.undevoured {
+    list-style: none;
+}
