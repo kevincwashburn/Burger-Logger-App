@@ -1,0 +1,85 @@
+{{!-- burger image here --}}
+<h1> Eat-The-Burger</h1>
+
+
+
+<form id="add-burger" class="button-size">
+    <input type="text" id="burger"></input>
+    <button type="btn-submit">Submit</button>
+</form>
+
+
+<div id="burger-list">
+    <ul>
+        {{#each boigahs}}
+        {{#unless devoured}}
+        <li>
+            <p>
+                {{name}}
+            </p>
+            <button data-burger-id="{{id}}" class="btn-devour">Devour it</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>
+
+<div class="devoured-list">
+    <ul>
+        {{#each boigahs}}
+        {{#if devoured}}
+
+        <li>{{id}}. {{name}}</li>
+
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+
+
+<script type="text/javascript">
+
+    $("#add-burger").on("submit", function (event) {
+        event.preventDefault();
+
+        let newBurger = {
+            name: $("#burger").val()
+        };
+        console.log(newBurger);
+
+        $.ajax({
+            url: "/api/burgers",
+            method: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                console.log("created new burger");
+                location.reload();
+            }
+        );
+    });
+    // post, get, put, delete
+
+    $(".btn-devour").on("click", function () {
+
+        var burgerId = $(this).data("burger-id");
+        console.log($(this).data("burger-id"));
+
+        $.ajax({
+            url: "/api/burgers/" + burgerId,
+            method: "PUT"
+        }).then(
+            function () {
+                console.log("updating id ", burgerId);
+                location.reload();
+            }
+        );
+
+        console.log(burgerId)
+
+    });
+
+
+
+</script>
