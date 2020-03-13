@@ -4,11 +4,19 @@ body {
 
 .burger-img {
     margin: 0 auto;
-    height: 400;
-    width: 400;
+    height: 300;
+    width: 300;
     box-shadow: 10px 10px 5px grey;
 };
 
-.undevoured {
+.list {
     list-style: none;
+};
+
+.devoured-list {
+    text-align: center;
+};
+
+li {
+    background-color: #BBDEF0;
 }

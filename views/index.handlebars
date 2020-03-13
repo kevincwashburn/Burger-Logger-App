@@ -1,43 +1,48 @@
-
 <div class="row">
-    <div class ="col-lg-4 heading">
-        <img src = "/assets/img/burger.jpg" class="burger-img">
+    <div class="col-lg-4 heading">
+        <img src="/assets/img/burger.jpg" class="burger-img">
         <h1> Eat-The-Burger</h1>
     </div>
 </div>
 
 
-<div id="burger-list">
-    <ul class="undevoured">
-        {{#each boigahs}}
-        {{#unless devoured}}
-        <li>
-            <p>
-                {{id}}. {{name}}
-                <button data-burger-id="{{id}}" class="btn-devour">Devour it</button>
-            </p>
-            
-        </li>
-        {{/unless}}
-        {{/each}}
-    </ul>
-</div>
+<div class="row" id="burger-list">
+    <div class="col-lg-4">
+        <ul class="list">
+            {{#each boigahs}}
+            {{#unless devoured}}
+            <li>
+                <p>
+                    {{id}}. {{name}}
+                    <button data-burger-id="{{id}}" class="btn-devour">Devour it</button>
+                </p>
 
-<form id="add-burger" class="button-size">
-    <input type="text" id="burger"></input>
-    <button type="btn-submit">Submit</button>
-</form>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
 
-<div class="devoured-list">
-    <ul>
-        {{#each boigahs}}
-        {{#if devoured}}
+    <div class="col-lg-4">
+        <form id="add-burger" class="button-size">
+            <input type="text" id="burger"></input>
+            <button type="btn-submit">Submit</button>
+        </form>
+        <p>Enter a burger you want to eat and click Submit!</p>
+    </div>
 
-        <li>{{id}}. {{name}}</li>
 
-        {{/if}}
-        {{/each}}
-    </ul>
+    <div class="col-lg-4 devoured-list">
+        <ul class="list">
+            {{#each boigahs}}
+            {{#if devoured}}
+
+            <li>{{id}}. {{name}}</li>
+
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
 </div>
 
 
