@@ -6,6 +6,7 @@ body {
     margin: 0 auto;
     height: 400;
     width: 400;
+    box-shadow: 10px 10px 5px grey;
 };
 
 .undevoured {
