@@ -41,4 +41,7 @@ npm run test
 
 If you have any questions about the repo, open an issue or contact [kevincwashburn](https://api.github.com/users/kevincwashburn) directly at kevincwashburn@gmail.com.
 
+Heroku Deployed Link:
+https://tranquil-river-04902.herokuapp.com/
+
 ![deployed-jpg](/public/assets/img/deployed.jpg)
